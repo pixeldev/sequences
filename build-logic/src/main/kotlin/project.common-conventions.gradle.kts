@@ -18,14 +18,8 @@ indra {
   checkstyle(libs.versions.checkstyle.get())
 }
 
-repositories {
-  maven("https://repo.revengenetwork.es/repository/libs/")
-}
-
 dependencies {
   checkstyle(libs.stylecheck)
-  compileOnly(libs.paper)
-  compileOnly(libs.fenix)
 }
 
 spotless {
@@ -35,7 +29,7 @@ spotless {
     indentWithSpaces(2)
   }
   java {
-    importOrderFile(rootProject.file(".spotless/revenge.importorder"))
+    importOrderFile(rootProject.file(".spotless/pixeldev.importorder"))
     removeUnusedImports()
     applyCommon()
   }
@@ -49,7 +43,7 @@ tasks {
     manifest {
       attributes(
         "Specification-Version" to project.version,
-        "Specification-Vendor" to "fenix-team",
+        "Specification-Vendor" to "pixeldev",
         "Implementation-Build-Date" to Date()
       )
     }
